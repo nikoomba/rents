@@ -1,1 +1,3 @@
 This is unfinished work. Comeback later. 
+
+You must have Flask installed in your python path. If you have installed python setup-tools, this command is simply 'easy_install flask'.
