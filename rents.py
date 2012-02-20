@@ -8,6 +8,6 @@ rents = flask(__name__)
 def main_page():
     return main_page
 
-@rents.route(loc)
-def location():
-    return location.
+@rents.route("/<location>")
+def location_view(location):
+    pass
