@@ -11,7 +11,7 @@ def main_page():
 
 @rents.route("/<location>")
 def location_view(location):
-    pass
+    return geocode(location)
 
 def geocode(addr):
     """ Fetch geocoded location. Currently we are using the google maps geocoding api located at  http://code.google.com/apis/maps/documentation/geocoding/ It only allows 2500 requests a day. An option to get around this later is to embed this request client-side or perhaps to explore the use of OpenStreetMap?"""
@@ -22,3 +22,7 @@ def geocode(addr):
     return location
 
 geocode("Glasgow%20University") #note '%20' only needs to be in for testing purposes since the browser will automatically change a space into '%20' when sending the request to the handler. 
+
+"""Run Flask if this file is executed by python. Useful to comment this out for testing"""
+if __name__ == '__main__':
+    app.run()
