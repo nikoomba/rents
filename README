@@ -1,3 +1,10 @@
 This is unfinished work. Comeback later. 
 
 You must have Flask installed in your python path. If you have installed python setup-tools, the command is 'sudo easy_install flask'.
+
+HOW TO USE:
+The idea is that 'http://some.url/Oxford University' will serve a map displaying rentals by their color-coded expense per-room close to Oxford University. This should work for any location across the UK, with other locations to be added later.
+
+Currently I will be serving this on cheaprents.in so that 'cheaprents.in/Oxford University' shows the rental expense near Oxford University.
+
+Note that Flask serves on port 5000 when in testing mode, so you will need to direct your browser to http://<someurl>:5000/<location_requested> when testing, where <someurl> maybe the local machine (127.0.0.1) or a remote server. To make sure it is viewable from outside of the machine you are at, change the address it is served on from 127.0.0.1 to 0.0.0.0
