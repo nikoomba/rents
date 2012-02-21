@@ -1,0 +1,85 @@
+figure{padding-top:5px; background-color: #f5f5f5; text-align:center; margin-bottom:0px;border-bottom:1px solid #ddd;-webkit-box-shadow:0 1px 0 rgba(255, 255, 255, 0.5);-moz-box-shadow:0 1px 0 rgba(255, 255, 255, 0.5);box-shadow:0 1px 0 rgba(255, 255, 255, 0.5);}
+
+.mapoptions{width:50%; margin-left: auto; margin-right:auto;}
+
+.maplist:first-child {border-top: 1px dashed black;}
+.maplist {text-align: center; height: 60px; margin-left: -25px; list-style:none; border-bottom: 1px dashed black; }
+
+.mapview      {width: 70px; float:left; padding: 15px 0px 5px 0px;}
+.mapviewcount {font-weight: bold; font-size: 25px; }
+.mapusers     {width: 70px; float:left; padding: 15px 5px 5px 0px;}
+.mapuserscount{font-weight: bold; font-size: 25px;  }
+.maptitle     {text-align: left; vertical-align: middle; height: 44px; width: 390px; float: left; font-weight: bold; font-size: 20px; padding: 14px 0px 0px 0px; overflow:hidden;}
+.mapowner     {float:right; width: 165px; text-align: left; padding: 6px 0px 0px 0px; overflow:hidden;}
+.mapowner .grav {width: 48px; float: left;}
+.mapowner .createdby {width: 110px; float:left; padding: 6px 0px 0px 6px; height: 49px; overflow:hidden;}
+
+.maplist:after {clear: both;}
+
+.maplist:nth-child(odd)  {background-color: #f5f5f5;}
+.maplist:nth-child(even) {background-color: #fcfcfc;}
+
+
+body { padding-top: 60px; }
+.page-header { background-color: #f5f5f5;padding: 20px 20px 10px; margin: -20px -20px 20px;}
+.content hr { margin-right: 20px; }
+.content .span4 { margin-left: 9px; padding-left: 10px; border-left: 1px solid #eee; }
+#map_canvas { height: 100%; border: 1px black solid; }
+
+#tw-share, #fb-share, #gp-share { cursor:pointer; }
+
+
+.contactinput  {width:540px; margin-left: 5px;}
+.contactsubmit {margin-left: 135px; margin-top: 10px;}
+
+/** FOOTER **/
+footer {
+    background: #888787;
+    background: -webkit-gradient(linear, left bottom, right top, from(#888787), to(#666));
+    background: -moz-linear-gradient(left bottom, #888787, #666);
+    background: gradient(linear, left bottom, right top, from(#888787), to(#666));
+    padding: 10px;
+    color: #eee;
+    -webkit-box-shadow: inset rgba(0,0,0,.1) 0 5px 5px;
+    -moz-box-shadow: inset rgba(0,0,0,.1) 0 5px 5px;
+    box-shadow: inset rgba(0,0,0,.1) 0 5px 5px;
+    border-top: 1px solid rgba(0,0,0,.2);
+    text-shadow: #555 -1px -1px 0px;
+}
+
+footer a        { text-decoration: none;  color: #ccc;}
+footer a:hover  { color: #fff;  text-decoration: none;}
+footer ul       { float: left;  width: 180px;  padding: 0px 0 0px;}
+footer ul.quote { width: 280px;}
+footer ul li    { list-style: none;  margin-bottom: 3px;}
+footer h2       { font-size: 14px; font-weight: normal;  margin-bottom: 3px;}
+footer h2 a     { color: #fff;}
+footer hr       { clear: both;  border: none;  border-top: 1px solid #616060;  border-bottom: 1px solid #939393;  margin: 20px 0;}
+#copy           { text-align: center;}
+
+
+.subhead h1 { color: #f5f5f5;}
+.subhead {
+color: #f5f5f5;
+margin-top: -20px;
+margin-bottom: 20px;
+padding-top: -20px;
+background-color: #767D80;
+background-repeat: no-repeat;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#565D60), to(#767D80));
+background-image: -webkit-linear-gradient(#565D60, #767D80);
+background-image: -moz-linear-gradient(#565D60, #767D80);
+background-image: -o-linear-gradient(top, #565D60, #767D80);
+background-image: -khtml-gradient(linear, left top, left bottom, from(#565D60), to(#767D80));
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#565D60', endColorstr='#767D80', GradientType=0);
+}
+
+.jumbotron .inner {
+background: transparent url(../images/grid-18px.png) top center;
+padding: 10px 0;
+-webkit-box-shadow: inset 0 10px 30px rgba(0, 0, 0, .3);
+-moz-box-shadow: inset 0 10px 30px rgba(0, 0, 0, .3);
+}
+
+.vsep {  width: 280px; padding-left: 10px; border-left: 1px solid #eee; }
+.howtostep { height: 150px; }

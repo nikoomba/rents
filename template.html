@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>CheapRents.in</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" media="screen" href="./css/bootstrap.css">
+
+	<link rel="stylesheet" href="./css/leaflet.css" />
+	<script src="./js/leaflet.js"></script>
+        <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>    
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+	  
+          <a class="brand" href="./index.html">Rents</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./">Home</a>
+              </li>
+              <li class="">
+                <a href="./about.html">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+<div class ="container">
+
+ <!--END NAVBAR--->
+   <div class = "span12">
+     <div class="content">
+        <div class="page-header">
+          <form class = "well form-inline" action="/" method="post">
+            <h2>CheapRents.in/
+	    <input type="search" name="search" placeholder="Oxford University" />
+	    <button type="submit" class="btn">Go</button>
+            </h2>
+	</form>
+        </div>
+	</div>
+    
+    <div class = "row">
+          <div class="span12">
+	    <div id="map" style="height: 400px">
+		 <script>
+		 var map = new L.Map('map');
+		 var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/d0728a79353f4570be70b875b48597a9/997/256/{z}/{x}/{y}.png',
+    cloudmadeAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+    cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib});
+		 var london = new L.LatLng( $location ); // geographical point (longitude and latitude)
+map.setView(london, 13).addLayer(cloudmade);
+		 </script>
+	    </div>
+                <p><b>Rents</b> coloured by monthly cost/room </p>
+            <div>
+                 <table><tr>
+                 <td width="300px"><b>Map Legend</b><br />blblblblbb</td>
+                 <td width="75px"><img src="/img/" alt='Blogger icon'><br /> Blogger</td>
+                 </tr></table>
+            </div>
+	  </div>
+        </div>
+     </div>
+    </body>
+</html>

@@ -23,8 +23,8 @@ class Template:
     def variables(self):
         """ list all of the variables in a document"""
         v = []
-        for line in self.contents:
-            for word in line.split():
+        for line in self.data:
+            for word in line:
                 if word[0]=='$':
                     v.append(word)
         return v
@@ -55,5 +55,8 @@ class Template:
         for line in self.data:
             lineout = ""
             for word in line:
-                lineout=lineout+word 
+                lineout=lineout+word+' ' 
             output.write(lineout + '\n')
+        output.close()
+
+
