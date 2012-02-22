@@ -4,9 +4,14 @@ The idea is this: display a complete listing of rentals near a given location co
 
 You will only be able to log in with an .edu, .edu.au, .ac.uk address, so the information about comparatively cheap places is not given to real estate agents who may then raise prices.
 
-Plans are to integrate a 'pain threshold' slider in Javascrip to clear the map to be just the cheapest, or raise the budget slightly. I also plan to add a circle layer to the map that is click and dragable to expand the distance from university if a student finds the location unsuitable.
+Plans are to integrate a 'pain threshold' slider in Javascript to clear the map to be just the cheapest, or raise the budget slightly. I also plan to add a circle layer to the map that is click and dragable to expand the distance from university if a student finds the location unsuitable.
 
 The reason I chose the Nestoria API is because I found it to have more listings than RealEstate.com.au and Domain.com.au COMBINE. So it offered a more complete picture of what was available. I haven't tested this for other locations. 
+
+FUNCTIONALITY AT PRESENT: 
+	      Query a location within a 5km radius
+	      Return an incomplete set of listings
+	      Markers list locations with price per room
 
 You must have Flask installed in your python path. If you have installed python setup-tools, the command is 'sudo easy_install flask'.
 
