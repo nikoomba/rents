@@ -4,13 +4,12 @@
     <head>
         <title>CheapRents.in</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" media="screen" href="./css/bootstrap.css">
-
-	<link rel="stylesheet" href="./css/leaflet.css" />
-	<script src="./js/leaflet.js"></script>
-        <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" media="screen" href="static/css/bootstrap.css">
+	<link rel="stylesheet" href="static/css/leaflet.css" />
+	<script src="static/js/leaflet.js"></script>
+        <script src="static/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+        <script src="static/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+        <script src="static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>    
   <!-- Navbar
@@ -45,7 +44,7 @@
    <div class = "span12">
      <div class="content">
         <div class="page-header">
-          <form class = "well form-inline" action="/" method="post">
+          <form class = "well form-inline" action="/" method="get">
             <h2>CheapRents.in/
 	    <input type="search" name="search" placeholder="Oxford University" />
 	    <button type="submit" class="btn">Go</button>
@@ -60,10 +59,16 @@
 		 <script>
 		 var map = new L.Map('map');
 		 var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/d0728a79353f4570be70b875b48597a9/997/256/{z}/{x}/{y}.png',
-    cloudmadeAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
-    cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib});
+		 cloudmadeAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+		 cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib});
 		 var london = new L.LatLng( $location ); // geographical point (longitude and latitude)
-map.setView(london, 13).addLayer(cloudmade);
+		 
+		 map.setView(london, 13).addLayer(cloudmade);
+		 var markerLocation = new L.LatLng(51.5, -0.09);
+		 //this needs to be looped over to enumerate the listings
+		 var marker = new L.Marker(markerLocation);
+		 map.addLayer(marker);
+		 marker.bindPopup("<b>Title</b><br />Cost/room <a href = 'link'>link</a>")
 		 </script>
 	    </div>
                 <p><b>Rents</b> coloured by monthly cost/room </p>

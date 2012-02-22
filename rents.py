@@ -1,5 +1,5 @@
 from flask import Flask
-from map import geocode
+from map import *
 
 app = Flask(__name__)
 
@@ -16,7 +16,13 @@ def location_view(loc):
     (lat,lng)=(x['lat'],x['lng'])
     return "Lat: {0}, Long: {1}".format(lat,lng)
     ---------- test"""
-
+    return generateMap(loc)
+"""
+@app.route("/static/<filename>")
+def get_static(filename):
+    f = open("/static/"+filename, 'r')
+    return f.read()
+"""
 """Run Flask if this file is executed by python. Useful to comment this out for testing in the commandline, or else uncomment the 'app.debug=True' line"""
 if __name__ == '__main__':
     app.debug = True

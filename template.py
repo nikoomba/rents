@@ -51,12 +51,14 @@ class Template:
             self.replaceVariable(replacement[0],replacement[1])
     def outputDoc(self, outputname):
         """ This method returns the document datastructure as a string formated as HTML. 'outputname' is the name of the file to output to"""
-        output = open(outputname, 'a')
+        output = open(outputname, 'w')
+        stringy = ''
         for line in self.data:
             lineout = ""
             for word in line:
                 lineout=lineout+word+' ' 
-            output.write(lineout + '\n')
+            stringy = stringy + lineout + '\n'
+        output.write(stringy)
         output.close()
-
+        
 
