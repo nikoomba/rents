@@ -61,14 +61,18 @@
 		 var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/d0728a79353f4570be70b875b48597a9/997/256/{z}/{x}/{y}.png',
 		 cloudmadeAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
 		 cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib});
-		 var london = new L.LatLng( $location ); // geographical point (longitude and latitude)
+		 var centre = new L.LatLng( $location ); // geographical point (longitude and latitude)
 		 
-		 map.setView(london, 13).addLayer(cloudmade);
-		 var markerLocation = new L.LatLng(51.5, -0.09);
+		 map.setView(centre, 13).addLayer(cloudmade);
+
 		 //this needs to be looped over to enumerate the listings
-		 var marker = new L.Marker(markerLocation);
-		 map.addLayer(marker);
-		 marker.bindPopup("<b>Title</b><br />Cost/room <a href = 'link'>link</a>")
+//		 var markerLocation = new L.LatLng(51.5, -0.09);
+//		 var marker = new L.Marker(markerLocation);
+//		 map.addLayer(marker);
+//		 marker.bindPopup("<b>Title</b><br />Cost/room <a href = 'link'>link</a>")
+
+		 $JSCRIPT
+
 		 </script>
 	    </div>
                 <p><b>Rents</b> coloured by monthly cost/room </p>

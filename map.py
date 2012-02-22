@@ -51,39 +51,30 @@ class Listing:
         self.source = listing_json['datasource_name']
         self.bathrooms = listing_json['bathroom_number']
         self.perroom = self.price/int(self.rooms) 
-    
 
 def generateMap(location):
     x = Template("template.html")
     geocoded = geocode(location)
     x.replaceVariable('$location', "{0},{1}".format(geocoded['lat'],geocoded['lng']))
+    index = x.findJS()
+    print index
+    x.data.pop(index)
+    js = createJavascript(location,index)
+    x.data.insert(index,js)
     x.outputDoc("output.html")
     page = open("output.html", 'r')
     return page.read()
 
-def createJavascript(location):
-    js = """var marker{0} = new L.Marker({1}); map.addLayer(marker{0}); marker{0}.bindPopup("<b>{2}</b><br />{3}<a href = '{4}'>{5}</a>")"""
+def createJavascript(location, index):
+    js = """ \t var markerLocation = new L.LatLng({1}); \n var marker{0} = new L.Marker(markerLocation); \n map.addLayer(marker{0}); \n  marker{0}.bindPopup("<b>{2}</b><br />{3}<a href = '{4}'>{5}</a>"); \n"""
     results = Listings(location)
     marker_entries = []
     for num in range(len(results.listings)):
         marker_entries.append(js.format(num,results.listings[num].location['lat']+','+results.listings[num].location['lng'],results.listings[num].title,results.listings[num].perroom,results.listings[num].img, results.listings[num].location))
     return marker_entries
 
-print createJavascript("London%20School%20of%20Economics")
+
     
-
-js = """var marker{0} = new L.Marker({1});
-map.addLayer(marker{0});
-marker{0}.bindPopup("<b>{2}</b><br />{3}<a href = '{4}'>link</a>")"""
-
-""" 0 = marker number
-1 = marker location (lat,lng)
-2 = title
-3 = summary
-4 = link
-"""
-
-print js.format('1337','lat,lng','a very nice title','some lousy description','http://awesomeness.hai')
 
 #print generateMap("Oxford%University")
 #print geocode("Oxford%20University")

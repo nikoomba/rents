@@ -44,6 +44,13 @@ class Template:
                 if word == variable:
                     line.insert(line.index(variable),replacement)
                     line.remove(variable)
+    def findJS(self):
+        lc = 0
+        for line in self.data:
+            if len(line)==1 and line[0]=='$JSCRIPT':
+                return lc
+            else:
+                lc = lc+1
     def replaceList(self,replacement_list):
         """A replacement list is a list of variables along with what they should be replaced with as tuples"""
         """    Example: example_replacement_list = [['$variable1', 'replacement1'],['$variable2','replacement2']] """
