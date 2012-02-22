@@ -11,7 +11,11 @@ The reason I chose the Nestoria API is because I found it to have more listings 
 FUNCTIONALITY AT PRESENT: 
 	      Query a location within a 5km radius
 	      Return an incomplete set of listings
-	      Markers list locations with price per room
+	      Markers list locations with price 
+
+Why python?
+Many API calls are made and I found that putting these server side made loading faster. 
+Also, so it's possible to persist some of the datastructures on the server to save previous API calls. 
 
 You must have Flask installed in your python path. If you have installed python setup-tools, the command is 'sudo easy_install flask'.
 
