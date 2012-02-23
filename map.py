@@ -23,7 +23,9 @@ def fetchResults(location):
     return pythonified_json
 
 class Listings:
-    """This could just be a list (silly me)"""
+    """ ISSUE: This could just be a list (silly me)"""
+    """ ISSUE: some other issue """
+
     def __init__(self, location):
         x = fetchResults(geocode(location))['response']['listings']
         lyst = []
@@ -35,7 +37,6 @@ class Listings:
         for listing in self.listings:
             print listing.title
     
-
 class Listing:
     def __init__(self, listing_json):
         self.price = listing_json['price']
@@ -52,12 +53,17 @@ class Listing:
         self.bathrooms = listing_json['bathroom_number']
         self.perroom = self.price/int(self.rooms) 
 
+'''These two functions work, but are a mess'''
 def generateMap(location):
+    ''' Pull the template, replace some variables.
+        To ADD: 
+              *check all variables are replaced.
+              
+    '''
     x = Template("template.html")
-    geocoded = geocode(location)
-    x.replaceVariable('$location', "{0},{1}".format(geocoded['lat'],geocoded['lng']))
-    index = x.findJS()
-    print index
+    geocode = geocode(location) #grab the centrepoint from the Google Geocoding API
+    x.replaceVariable('$location', "{0},{1}".format(geocode['lat'],geocode['lng']))
+    index = x.findJS() 
     x.data.pop(index)
     js = createJavascript(location,index)
     x.data.insert(index,js)
@@ -73,8 +79,6 @@ def createJavascript(location, index):
         marker_entries.append(js.format(num,results.listings[num].location['lat']+','+results.listings[num].location['lng'],results.listings[num].title,results.listings[num].perroom,results.listings[num].img, results.listings[num].location))
     return marker_entries
 
-
-    
-
+""" ISSUE test 3 """"
 #print generateMap("Oxford%University")
 #print geocode("Oxford%20University")
