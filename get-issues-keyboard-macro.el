@@ -11,3 +11,4 @@
 (fset 'enumerate\ issues
    "\C-sISSUE\C-[z.\C-y\C-x\C-fissues.txt\C-m\C-y\C-xb\C-m\C-[xre search backward\C-mclass \\| def\C-?\C-?\C-?\C-?def\C-m\C-k\C-y\C-xb\C-m\C-[a\C-y\C-m\C-[e\C-m\C-m\C-xb\C-m\C-[e")
 
+
