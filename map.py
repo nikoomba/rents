@@ -23,8 +23,8 @@ def fetchResults(location):
     return pythonified_json
 
 class Listings:
-    """ ISSUE: This could just be a list (silly me)"""
-    """ ISSUE: some other issue """
+    """ ISSUE *This could just be a list (silly me)
+              *some other issue ."""
 
     def __init__(self, location):
         x = fetchResults(geocode(location))['response']['listings']
@@ -79,6 +79,6 @@ def createJavascript(location, index):
         marker_entries.append(js.format(num,results.listings[num].location['lat']+','+results.listings[num].location['lng'],results.listings[num].title,results.listings[num].perroom,results.listings[num].img, results.listings[num].location))
     return marker_entries
 
-""" ISSUE test 3 """"
+""" ISSUE test 3 .""""
 #print generateMap("Oxford%University")
 #print geocode("Oxford%20University")
