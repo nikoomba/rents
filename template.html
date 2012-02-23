@@ -61,18 +61,17 @@
 		 var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/d0728a79353f4570be70b875b48597a9/997/256/{z}/{x}/{y}.png',
 		 cloudmadeAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
 		 cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib});
-		 var centre = new L.LatLng(51.505, -0.09 ); // geographical point (longitude and latitude)
+		 var centre = new L.LatLng( $location ); // geographical point (longitude and latitude)
 		 
 		 map.setView(centre, 13).addLayer(cloudmade);
 
-
 		 //this needs to be looped over to enumerate the listings
-		 var markerLocation = new L.LatLng(51.5, -0.09);
-		 var marker = new L.Marker(markerLocation);
-		 map.addLayer(marker);
-		 marker.bindPopup("hello world");
+//		 var markerLocation = new L.LatLng(51.5, -0.09);
+//		 var marker = new L.Marker(markerLocation);
+//		 map.addLayer(marker);
+//		 marker.bindPopup("hello world");
 
-//		 $JSCRIPT
+		 $JSCRIPT
 
 		 </script>
 	    </div>
