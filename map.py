@@ -73,7 +73,7 @@ def createJavascript(location, index):
     results = listListings(location)
     marker_entries = []
     for num in range(len(results)):
-        marker_entries.append(js.format(num,results[num].location['lat']+','+results[num].location['lng'],results[num].title,results[num].perroom,results[num].img, results[num].location))
+        marker_entries.append(js.format(num,results[num].location['lat']+','+results[num].location['lng'],results[num].title,results[num].perroom,results[num].img, results[num].keywords))
     return marker_entries
 
 
