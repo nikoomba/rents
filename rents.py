@@ -13,7 +13,6 @@ def location_view(loc):
     loc = loc.replace(' ','_')
     return generateMap(loc)
 
-"""Run Flask if this file is executed by python. Useful to comment this out for testing in the commandline, or else uncomment the 'app.debug=True' line"""
 if __name__ == '__main__':
     app.debug = True
     app.run()
