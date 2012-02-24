@@ -3,6 +3,7 @@ from map import *
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def main_page():
     page = open("main.html", 'r')
@@ -12,6 +13,10 @@ def main_page():
 def location_view(loc):
     loc = loc.replace(' ','_')
     return generateMap(loc)
+
+@app.route("/about.html")
+def get_about():
+    return open('about.html', 'r').read()
 
 if __name__ == '__main__':
     app.debug = True
